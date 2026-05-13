@@ -47,7 +47,7 @@ Make sure you have Python 3 installed on your machine.
 
 5. **View the website**:
    Open your browser and navigate to `http://127.0.0.1:5000`
-
+   
 ## 📁 Project Structure
 
 ```text
