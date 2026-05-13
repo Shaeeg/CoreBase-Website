@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CoreBase - Business Digitalization in Azerbaijan</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        odoo: '#714B67',
+                        navy: '#0F172A', // Deep Navy
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body class="font-sans text-gray-800 bg-gray-50 flex flex-col min-h-screen">
+    
+    <!-- Navbar -->
+    <nav class="bg-navy text-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20">
+                <div class="flex items-center">
+                    <a href="/" class="flex-shrink-0 flex items-center gap-2">
+                        <!-- Placeholder for Logo -->
+                        <div class="w-10 h-10 bg-odoo rounded-md flex items-center justify-center font-bold text-xl">CB</div>
+                        <span class="font-bold text-2xl tracking-tight">CoreBase</span>
+                    </a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#about" class="text-gray-300 hover:text-white transition-colors" data-i18n="nav_about">About Us</a>
+                    <a href="#solutions" class="text-gray-300 hover:text-white transition-colors" data-i18n="nav_solutions">Solutions</a>
+                    <a href="#contact" class="text-gray-300 hover:text-white transition-colors" data-i18n="nav_contact">Contact</a>
+                    
+                    <!-- Language Switcher -->
+                    <div class="relative ml-4">
+                        <select id="langSwitcher" class="bg-transparent text-white border border-gray-600 rounded-md py-1 px-2 focus:outline-none focus:ring-2 focus:ring-odoo cursor-pointer">
+                            <option value="en" class="text-black">EN</option>
+                            <option value="az" class="text-black">AZ</option>
+                        </select>
+                    </div>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobileMenuBtn" class="text-gray-300 hover:text-white focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-navy pb-4 px-4">
+            <a href="#about" class="block py-2 text-gray-300 hover:text-white" data-i18n="nav_about">About Us</a>
+            <a href="#solutions" class="block py-2 text-gray-300 hover:text-white" data-i18n="nav_solutions">Solutions</a>
+            <a href="#contact" class="block py-2 text-gray-300 hover:text-white" data-i18n="nav_contact">Contact</a>
+            <div class="mt-2">
+                <select id="langSwitcherMobile" class="bg-gray-800 text-white border border-gray-600 rounded-md py-1 px-2 w-full">
+                    <option value="en">EN</option>
+                    <option value="az">AZ</option>
+                </select>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="flex-grow">
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-navy text-gray-400 py-8 border-t border-gray-800 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="flex items-center justify-center gap-2 mb-4">
+                <div class="w-8 h-8 bg-odoo rounded flex items-center justify-center font-bold text-white text-sm">CB</div>
+                <span class="font-bold text-white text-xl">CoreBase</span>
+            </div>
+            <p data-i18n="footer_text">© 2024 CoreBase. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Custom JS -->
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

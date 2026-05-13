@@ -1,0 +1,146 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="relative bg-navy text-white overflow-hidden py-24 sm:py-32 lg:pb-32 xl:pb-36">
+    <!-- Background subtle gradient/pattern -->
+    <div class="absolute inset-0 z-0">
+        <div class="absolute inset-0 bg-gradient-to-br from-navy via-navy to-odoo opacity-50"></div>
+        <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjIiIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSIvPjwvc3ZnPg==')] opacity-30"></div>
+    </div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6 animate-fade-in-up" data-i18n="hero_title">
+            Business Digitalization in Azerbaijan
+        </h1>
+        <p class="mt-4 max-w-2xl mx-auto text-xl text-gray-300 mb-10 animate-fade-in-up animation-delay-100" data-i18n="hero_subtitle">
+            Empowering enterprises with cutting-edge Odoo solutions tailored for local growth.
+        </p>
+        <div class="animate-fade-in-up animation-delay-200">
+            <a href="#contact" class="inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-white bg-odoo hover:bg-opacity-90 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1" data-i18n="hero_cta">
+                Get a Free Consultation
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Solutions Section -->
+<section id="solutions" class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl font-bold text-navy mb-4" data-i18n="solutions_title">Our Odoo Solutions</h2>
+            <div class="w-24 h-1 bg-odoo mx-auto rounded"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- Accounting -->
+            <div class="bg-white rounded-xl shadow-md p-8 hover:shadow-xl transition-shadow duration-300 border-t-4 border-odoo group">
+                <div class="w-14 h-14 bg-purple-100 text-odoo rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-900 mb-3" data-i18n="sol_accounting_title">Accounting</h3>
+                <p class="text-gray-600" data-i18n="sol_accounting_desc">Local tax compliant financial management.</p>
+            </div>
+
+            <!-- Inventory -->
+            <div class="bg-white rounded-xl shadow-md p-8 hover:shadow-xl transition-shadow duration-300 border-t-4 border-odoo group">
+                <div class="w-14 h-14 bg-purple-100 text-odoo rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path></svg>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-900 mb-3" data-i18n="sol_inventory_title">Inventory</h3>
+                <p class="text-gray-600" data-i18n="sol_inventory_desc">Real-time warehouse and stock control.</p>
+            </div>
+
+            <!-- Sales -->
+            <div class="bg-white rounded-xl shadow-md p-8 hover:shadow-xl transition-shadow duration-300 border-t-4 border-odoo group">
+                <div class="w-14 h-14 bg-purple-100 text-odoo rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-900 mb-3" data-i18n="sol_sales_title">Sales</h3>
+                <p class="text-gray-600" data-i18n="sol_sales_desc">Streamlined quotation to invoice workflow.</p>
+            </div>
+
+            <!-- HR -->
+            <div class="bg-white rounded-xl shadow-md p-8 hover:shadow-xl transition-shadow duration-300 border-t-4 border-odoo group">
+                <div class="w-14 h-14 bg-purple-100 text-odoo rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-900 mb-3" data-i18n="sol_hr_title">HR & Payroll</h3>
+                <p class="text-gray-600" data-i18n="sol_hr_desc">Comprehensive employee lifecycle management.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Why Us Section -->
+<section id="about" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row items-center gap-12">
+            <div class="md:w-1/2">
+                <div class="relative rounded-2xl overflow-hidden shadow-2xl">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Team meeting" class="w-full h-auto object-cover transform hover:scale-105 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-odoo opacity-20"></div>
+                </div>
+            </div>
+            <div class="md:w-1/2">
+                <h2 class="text-3xl font-bold text-navy mb-6" data-i18n="why_title">Why CoreBase?</h2>
+                <div class="w-16 h-1 bg-odoo rounded mb-6"></div>
+                <p class="text-lg text-gray-600 leading-relaxed" data-i18n="why_desc">
+                    As a certified Odoo Learning Partner, we provide deep local expertise paired with world-class technology. We understand the Azerbaijani market and offer dedicated local support.
+                </p>
+                <ul class="mt-8 space-y-4">
+                    <li class="flex items-center text-gray-700">
+                        <svg class="w-6 h-6 text-odoo mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        Certified Odoo Experts
+                    </li>
+                    <li class="flex items-center text-gray-700">
+                        <svg class="w-6 h-6 text-odoo mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        Azerbaijani Tax & Legal Compliance
+                    </li>
+                    <li class="flex items-center text-gray-700">
+                        <svg class="w-6 h-6 text-odoo mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        Local On-site Support
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Form Section -->
+<section id="contact" class="py-20 bg-gray-50">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-white rounded-2xl shadow-xl overflow-hidden">
+            <div class="bg-navy p-8 text-center">
+                <h2 class="text-3xl font-bold text-white mb-2" data-i18n="contact_title">Transform Your Business Today</h2>
+                <p class="text-gray-300">Leave your details and we will contact you shortly.</p>
+            </div>
+            <div class="p-8">
+                <div id="formSuccess" class="hidden mb-6 p-4 bg-green-50 text-green-700 border border-green-200 rounded-lg flex items-center">
+                    <svg class="w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                    <span data-i18n="contact_success">Thank you! We will get back to you shortly.</span>
+                </div>
+                
+                <form id="contactForm" class="space-y-6">
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-gray-700 mb-1" data-i18n="contact_name">Full Name</label>
+                        <input type="text" id="name" name="name" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-odoo focus:border-odoo transition-colors outline-none">
+                    </div>
+                    <div>
+                        <label for="company" class="block text-sm font-medium text-gray-700 mb-1" data-i18n="contact_company">Company Name</label>
+                        <input type="text" id="company" name="company" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-odoo focus:border-odoo transition-colors outline-none">
+                    </div>
+                    <div>
+                        <label for="phone" class="block text-sm font-medium text-gray-700 mb-1" data-i18n="contact_phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-odoo focus:border-odoo transition-colors outline-none">
+                    </div>
+                    <button type="submit" class="w-full bg-odoo text-white font-semibold py-4 rounded-lg shadow hover:bg-opacity-90 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5 flex justify-center items-center">
+                        <span data-i18n="contact_submit">Request Consultation</span>
+                        <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
