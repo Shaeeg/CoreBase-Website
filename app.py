@@ -1,6 +1,10 @@
 from flask import Flask, render_template, request, jsonify
 import json
 import os
+import xmlrpc.client
+from dotenv import load_dotenv
+
+load_dotenv(override=True)
 
 app = Flask(__name__)
 
@@ -30,11 +34,40 @@ def handle_contact():
     company = data.get('company')
     phone = data.get('phone')
     
-    # In a real app, we would save to DB or send an email here.
-    # For now, we just print and return success.
-    print(f"New Contact: Name={name}, Company={company}, Phone={phone}")
+    odoo_url = os.getenv('ODOO_URL')
+    odoo_db = os.getenv('ODOO_DB')
+    odoo_username = os.getenv('ODOO_USERNAME')
+    odoo_password = os.getenv('ODOO_PASSWORD')
     
-    return jsonify({"status": "success", "message": "Thank you for reaching out!"})
+    if not all([odoo_url, odoo_db, odoo_username, odoo_password]):
+        print("Missing Odoo credentials in .env file.")
+        return jsonify({"status": "error", "message": "Server configuration error. Contact form temporarily disabled."}), 500
+
+    try:
+        # Authenticate with Odoo
+        common = xmlrpc.client.ServerProxy(f'{odoo_url}/xmlrpc/2/common')
+        uid = common.authenticate(odoo_db, odoo_username, odoo_password, {})
+        
+        if not uid:
+            print("Failed to authenticate with Odoo.")
+            return jsonify({"status": "error", "message": "Server authentication error."}), 500
+
+        # Create Lead
+        models = xmlrpc.client.ServerProxy(f'{odoo_url}/xmlrpc/2/object')
+        lead_id = models.execute_kw(odoo_db, uid, odoo_password, 'crm.lead', 'create', [{
+            'name': f"Website Lead: {company}",
+            'contact_name': name,
+            'partner_name': company,
+            'phone': phone,
+            'description': f"Lead generated from CoreBase website.\nName: {name}\nCompany: {company}\nPhone: {phone}"
+        }])
+        
+        print(f"Successfully created Odoo Lead ID: {lead_id}")
+        return jsonify({"status": "success", "message": "Thank you! We will get back to you shortly."})
+
+    except Exception as e:
+        print(f"Odoo XML-RPC Error: {str(e)}")
+        return jsonify({"status": "error", "message": "There was an error processing your request. Please try again later."}), 500
 
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
