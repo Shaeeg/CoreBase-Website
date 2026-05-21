@@ -20,6 +20,14 @@ def load_translations(lang):
 def index():
     return render_template('index.html')
 
+@app.route('/services')
+def services():
+    return render_template('services.html')
+
+@app.route('/about')
+def about():
+    return render_template('about.html')
+
 @app.route('/api/translations/<lang>')
 def get_translations(lang):
     if lang not in ['en', 'az']:

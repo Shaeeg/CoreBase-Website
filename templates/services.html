@@ -1,0 +1,223 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- ========== PAGE HERO ========== -->
+<section class="page-hero bg-navy text-white py-24 sm:py-28 wave-divider">
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div class="animate-fade-in-up inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-6">
+            <span class="text-sm text-gray-300 font-medium" data-i18n="services_badge">Odoo ERP Solutions</span>
+        </div>
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight mb-6 animate-fade-in-up animation-delay-100" data-i18n="services_hero_title">Our Services</h1>
+        <p class="max-w-2xl mx-auto text-lg text-gray-400 animate-fade-in-up animation-delay-200" data-i18n="services_hero_subtitle">
+            Complete Odoo ERP solutions designed to streamline every aspect of your business operations.
+        </p>
+    </div>
+</section>
+
+<!-- ========== ALL SERVICES GRID ========== -->
+<section class="py-24 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 stagger-children">
+
+            <!-- Accounting -->
+            <div class="glass-card p-8 animate-on-scroll group">
+                <div class="icon-box w-16 h-16 bg-purple-100 text-odoo rounded-xl mb-6">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-900 mb-3" data-i18n="sol_accounting_title">Accounting</h3>
+                <p class="text-gray-500 mb-5 leading-relaxed" data-i18n="svc_accounting_desc">Comprehensive financial management with full Azerbaijani tax compliance, automated invoicing, and real-time reporting.</p>
+                <ul class="space-y-2">
+                    <li class="flex items-center text-sm text-gray-600">
+                        <svg class="w-4 h-4 text-odoo mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        <span data-i18n="svc_acc_f1">Local tax compliance</span>
+                    </li>
+                    <li class="flex items-center text-sm text-gray-600">
+                        <svg class="w-4 h-4 text-odoo mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        <span data-i18n="svc_acc_f2">Automated invoicing</span>
+                    </li>
+                    <li class="flex items-center text-sm text-gray-600">
+                        <svg class="w-4 h-4 text-odoo mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        <span data-i18n="svc_acc_f3">Financial reporting</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Inventory -->
+            <div class="glass-card p-8 animate-on-scroll group">
+                <div class="icon-box w-16 h-16 bg-purple-100 text-odoo rounded-xl mb-6">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path></svg>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-900 mb-3" data-i18n="sol_inventory_title">Inventory</h3>
+                <p class="text-gray-500 mb-5 leading-relaxed" data-i18n="svc_inventory_desc">Real-time warehouse management with barcode scanning, automated reordering, and multi-location tracking.</p>
+                <ul class="space-y-2">
+                    <li class="flex items-center text-sm text-gray-600">
+                        <svg class="w-4 h-4 text-odoo mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        <span data-i18n="svc_inv_f1">Multi-warehouse support</span>
+                    </li>
+                    <li class="flex items-center text-sm text-gray-600">
+                        <svg class="w-4 h-4 text-odoo mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        <span data-i18n="svc_inv_f2">Barcode scanning</span>
+                    </li>
+                    <li class="flex items-center text-sm text-gray-600">
+                        <svg class="w-4 h-4 text-odoo mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        <span data-i18n="svc_inv_f3">Automated reordering</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Sales -->
+            <div class="glass-card p-8 animate-on-scroll group">
+                <div class="icon-box w-16 h-16 bg-purple-100 text-odoo rounded-xl mb-6">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-900 mb-3" data-i18n="sol_sales_title">Sales</h3>
+                <p class="text-gray-500 mb-5 leading-relaxed" data-i18n="svc_sales_desc">Streamlined sales pipeline from quotation to invoice with CRM integration and performance analytics.</p>
+                <ul class="space-y-2">
+                    <li class="flex items-center text-sm text-gray-600">
+                        <svg class="w-4 h-4 text-odoo mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        <span data-i18n="svc_sales_f1">Pipeline management</span>
+                    </li>
+                    <li class="flex items-center text-sm text-gray-600">
+                        <svg class="w-4 h-4 text-odoo mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        <span data-i18n="svc_sales_f2">Quotation templates</span>
+                    </li>
+                    <li class="flex items-center text-sm text-gray-600">
+                        <svg class="w-4 h-4 text-odoo mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        <span data-i18n="svc_sales_f3">Sales analytics</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- HR & Payroll -->
+            <div class="glass-card p-8 animate-on-scroll group">
+                <div class="icon-box w-16 h-16 bg-purple-100 text-odoo rounded-xl mb-6">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-900 mb-3" data-i18n="sol_hr_title">HR &amp; Payroll</h3>
+                <p class="text-gray-500 mb-5 leading-relaxed" data-i18n="svc_hr_desc">Complete employee lifecycle management from recruitment to retirement with payroll and attendance tracking.</p>
+                <ul class="space-y-2">
+                    <li class="flex items-center text-sm text-gray-600">
+                        <svg class="w-4 h-4 text-odoo mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        <span data-i18n="svc_hr_f1">Payroll automation</span>
+                    </li>
+                    <li class="flex items-center text-sm text-gray-600">
+                        <svg class="w-4 h-4 text-odoo mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        <span data-i18n="svc_hr_f2">Leave management</span>
+                    </li>
+                    <li class="flex items-center text-sm text-gray-600">
+                        <svg class="w-4 h-4 text-odoo mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        <span data-i18n="svc_hr_f3">Recruitment pipeline</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- CRM -->
+            <div class="glass-card p-8 animate-on-scroll group">
+                <div class="icon-box w-16 h-16 bg-purple-100 text-odoo rounded-xl mb-6">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-900 mb-3" data-i18n="sol_crm_title">CRM</h3>
+                <p class="text-gray-500 mb-5 leading-relaxed" data-i18n="svc_crm_desc">Customer relationship management with lead scoring, automated follow-ups, and 360° customer views.</p>
+                <ul class="space-y-2">
+                    <li class="flex items-center text-sm text-gray-600">
+                        <svg class="w-4 h-4 text-odoo mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        <span data-i18n="svc_crm_f1">Lead management</span>
+                    </li>
+                    <li class="flex items-center text-sm text-gray-600">
+                        <svg class="w-4 h-4 text-odoo mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        <span data-i18n="svc_crm_f2">Email marketing</span>
+                    </li>
+                    <li class="flex items-center text-sm text-gray-600">
+                        <svg class="w-4 h-4 text-odoo mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        <span data-i18n="svc_crm_f3">Customer analytics</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Website & eCommerce -->
+            <div class="glass-card p-8 animate-on-scroll group">
+                <div class="icon-box w-16 h-16 bg-purple-100 text-odoo rounded-xl mb-6">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-900 mb-3" data-i18n="sol_website_title">Website &amp; eCommerce</h3>
+                <p class="text-gray-500 mb-5 leading-relaxed" data-i18n="svc_website_desc">Build beautiful online stores integrated directly with your Odoo inventory and accounting modules.</p>
+                <ul class="space-y-2">
+                    <li class="flex items-center text-sm text-gray-600">
+                        <svg class="w-4 h-4 text-odoo mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        <span data-i18n="svc_web_f1">Online store setup</span>
+                    </li>
+                    <li class="flex items-center text-sm text-gray-600">
+                        <svg class="w-4 h-4 text-odoo mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        <span data-i18n="svc_web_f2">Payment integration</span>
+                    </li>
+                    <li class="flex items-center text-sm text-gray-600">
+                        <svg class="w-4 h-4 text-odoo mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        <span data-i18n="svc_web_f3">SEO optimization</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== IMPLEMENTATION PROCESS ========== -->
+<section class="py-24 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16 animate-on-scroll">
+            <p class="text-sm font-semibold text-odoo uppercase tracking-widest mb-3" data-i18n="process_label">How We Work</p>
+            <h2 class="text-3xl sm:text-4xl font-bold text-navy mb-4" data-i18n="process_title">Implementation Process</h2>
+            <p class="text-gray-500 max-w-2xl mx-auto" data-i18n="process_subtitle">A proven methodology to ensure your Odoo implementation is smooth and successful.</p>
+        </div>
+
+        <div class="space-y-12 stagger-children">
+            <!-- Step 1 -->
+            <div class="timeline-step animate-on-scroll">
+                <div class="timeline-dot">1</div>
+                <h3 class="text-xl font-bold text-gray-900 mb-2" data-i18n="process_step1_title">Discovery & Analysis</h3>
+                <p class="text-gray-500 leading-relaxed" data-i18n="process_step1_desc">We study your current business processes, pain points, and goals to create a tailored implementation roadmap.</p>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="timeline-step animate-on-scroll">
+                <div class="timeline-dot">2</div>
+                <h3 class="text-xl font-bold text-gray-900 mb-2" data-i18n="process_step2_title">Design & Configuration</h3>
+                <p class="text-gray-500 leading-relaxed" data-i18n="process_step2_desc">We configure Odoo modules to match your workflows and design custom solutions where needed.</p>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="timeline-step animate-on-scroll">
+                <div class="timeline-dot">3</div>
+                <h3 class="text-xl font-bold text-gray-900 mb-2" data-i18n="process_step3_title">Development & Testing</h3>
+                <p class="text-gray-500 leading-relaxed" data-i18n="process_step3_desc">Custom features are built and rigorously tested to ensure everything works perfectly before launch.</p>
+            </div>
+
+            <!-- Step 4 -->
+            <div class="timeline-step animate-on-scroll">
+                <div class="timeline-dot">4</div>
+                <h3 class="text-xl font-bold text-gray-900 mb-2" data-i18n="process_step4_title">Deployment & Training</h3>
+                <p class="text-gray-500 leading-relaxed" data-i18n="process_step4_desc">We deploy the system and provide comprehensive training to ensure your team is confident and productive.</p>
+            </div>
+
+            <!-- Step 5 -->
+            <div class="timeline-step animate-on-scroll">
+                <div class="timeline-dot">5</div>
+                <h3 class="text-xl font-bold text-gray-900 mb-2" data-i18n="process_step5_title">Ongoing Support</h3>
+                <p class="text-gray-500 leading-relaxed" data-i18n="process_step5_desc">Continuous support, updates, and optimization to keep your system running at peak performance.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== CTA BANNER ========== -->
+<section class="py-20 bg-gradient-to-r from-navy via-navy to-odoo-dark">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center animate-on-scroll">
+        <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4" data-i18n="services_cta_title">Ready to Transform Your Business?</h2>
+        <p class="text-gray-400 mb-8 text-lg" data-i18n="services_cta_subtitle">Let's discuss how Odoo can streamline your operations and drive growth.</p>
+        <a href="/#contact"
+            class="cta-glow inline-flex items-center justify-center px-8 py-4 text-base font-bold text-white bg-odoo rounded-xl shadow-lg shadow-odoo/30 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+            data-i18n="hero_cta">
+            Get a Free Consultation
+        </a>
+    </div>
+</section>
+{% endblock %}
