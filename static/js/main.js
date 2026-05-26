@@ -77,6 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
             
             statNumbers.forEach(stat => {
                 const target = parseInt(stat.dataset.target);
+                const suffix = stat.dataset.suffix || '+';
                 const duration = 2000;
                 const startTime = performance.now();
                 
@@ -88,11 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     const eased = 1 - Math.pow(1 - progress, 3);
                     const current = Math.round(eased * target);
                     
-                    stat.textContent = current + (target >= 50 ? '+' : '+');
-                    
-                    if (target === 99) {
-                        stat.textContent = current + '%';
-                    }
+                    stat.textContent = current.toLocaleString() + suffix;
                     
                     if (progress < 1) {
                         requestAnimationFrame(updateCounter);
