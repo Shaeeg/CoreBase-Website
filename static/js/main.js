@@ -195,7 +195,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     async function loadTranslations(lang) {
         try {
-            const response = await fetch(`/api/translations/${lang}`);
+            const response = await fetch(`/static/translations/${lang}.json`);
             if (!response.ok) throw new Error('Network response was not ok');
             const translations = await response.json();
             
@@ -261,7 +261,8 @@ document.addEventListener('DOMContentLoaded', () => {
             };
 
             try {
-                const response = await fetch('/api/contact', {
+                // IMPORTANT: Replace 'YOUR_FORM_ID' with your actual Formspree form ID
+                const response = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
@@ -269,15 +270,15 @@ document.addEventListener('DOMContentLoaded', () => {
                     body: JSON.stringify(formData)
                 });
 
-                const result = await response.json();
-
-                if (result.status === 'success') {
+                if (response.ok) {
                     formSuccess.classList.remove('hidden');
                     contactForm.reset();
                     
                     setTimeout(() => {
                         formSuccess.classList.add('hidden');
                     }, 5000);
+                } else {
+                    throw new Error('Form submission failed');
                 }
 
             } catch (error) {

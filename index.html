@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CoreBase — Business Digitalization in Azerbaijan | Odoo Partner</title>
+    <meta name="description" content="CoreBase is a certified Odoo Learning Partner in Azerbaijan, empowering enterprises with cutting-edge ERP solutions for accounting, inventory, sales, and HR.">
+    <link rel="icon" type="image/svg+xml" href="static/images/favicon.svg">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        odoo: '#714B67',
+                        'odoo-light': '#8F6483',
+                        'odoo-dark': '#53374C',
+                        navy: '#0F172A',
+                        'navy-light': '#1E293B',
+                        accent: '#FF6600',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+
+<body class="font-sans text-gray-800 bg-gray-50 flex flex-col min-h-screen">
+
+    <!-- Navbar -->
+    <nav class="navbar bg-navy text-white sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20">
+                <div class="flex items-center">
+                    <a href="index.html" class="brand-link flex-shrink-0 flex items-center gap-3">
+                        <!-- Animated Isometric Cube Logo -->
+                        <svg viewBox="0 0 200 200" width="50" height="50" class="corebase-logo">
+                            <defs>
+                                <filter id="sunGlowNav" x="-20%" y="-20%" width="140%" height="140%">
+                                    <feGaussianBlur stdDeviation="3" result="blur" />
+                                    <feMerge>
+                                        <feMergeNode in="blur" />
+                                        <feMergeNode in="SourceGraphic" />
+                                    </feMerge>
+                                </filter>
+                            </defs>
+                            <g class="core-sun" filter="url(#sunGlowNav)">
+                                <g stroke-linecap="round">
+                                    <line x1="100" y1="100" x2="100" y2="45" stroke="#FF6600" stroke-width="4.5" transform="rotate(0 100 100)" />
+                                    <line x1="100" y1="100" x2="100" y2="45" stroke="#FF6600" stroke-width="4.5" transform="rotate(60 100 100)" />
+                                    <line x1="100" y1="100" x2="100" y2="45" stroke="#FF6600" stroke-width="4.5" transform="rotate(120 100 100)" />
+                                    <line x1="100" y1="100" x2="100" y2="45" stroke="#FF6600" stroke-width="4.5" transform="rotate(180 100 100)" />
+                                    <line x1="100" y1="100" x2="100" y2="45" stroke="#FF6600" stroke-width="4.5" transform="rotate(240 100 100)" />
+                                    <line x1="100" y1="100" x2="100" y2="45" stroke="#FF6600" stroke-width="4.5" transform="rotate(300 100 100)" />
+                                    <line x1="100" y1="100" x2="100" y2="58" stroke="#FF9900" stroke-width="3" transform="rotate(30 100 100)" />
+                                    <line x1="100" y1="100" x2="100" y2="58" stroke="#FF9900" stroke-width="3" transform="rotate(90 100 100)" />
+                                    <line x1="100" y1="100" x2="100" y2="58" stroke="#FF9900" stroke-width="3" transform="rotate(150 100 100)" />
+                                    <line x1="100" y1="100" x2="100" y2="58" stroke="#FF9900" stroke-width="3" transform="rotate(210 100 100)" />
+                                    <line x1="100" y1="100" x2="100" y2="58" stroke="#FF9900" stroke-width="3" transform="rotate(270 100 100)" />
+                                    <line x1="100" y1="100" x2="100" y2="58" stroke="#FF9900" stroke-width="3" transform="rotate(330 100 100)" />
+                                </g>
+                                <circle cx="100" cy="100" r="4" fill="#FFFFFF" />
+                            </g>
+                            <path class="cube-part face-top" d="M 100,34 L 157,67 L 100,100 L 43,67 Z" fill="#8F6483" stroke="#8F6483" stroke-width="1.5" stroke-linejoin="round" />
+                            <path class="cube-part face-left" d="M 43,67 L 100,100 L 100,166 L 43,133 Z" fill="#53374C" stroke="#53374C" stroke-width="1.5" stroke-linejoin="round" />
+                            <path class="cube-part face-right" d="M 100,100 L 157,67 L 157,133 L 100,166 Z" fill="#714B67" stroke="#714B67" stroke-width="1.5" stroke-linejoin="round" />
+                        </svg>
+                        <div class="flex flex-col justify-center">
+                            <span class="text-2xl font-extrabold tracking-tight leading-none">Core<span style="color: #8F6483">Base</span></span>
+                            <span class="text-[10px] font-bold tracking-[0.15em] uppercase" style="color: #FF6600">Odoo Partner</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="index.html" class="nav-link text-gray-300 hover:text-white transition-colors"
+                        data-i18n="nav_home">Home</a>
+                    <a href="services.html" class="nav-link text-gray-300 hover:text-white transition-colors"
+                        data-i18n="nav_solutions">Solutions</a>
+                    <a href="about.html" class="nav-link text-gray-300 hover:text-white transition-colors"
+                        data-i18n="nav_about">About Us</a>
+                    <a href="index.html#contact" class="nav-link text-gray-300 hover:text-white transition-colors"
+                        data-i18n="nav_contact">Contact</a>
+
+                    <!-- Language Switcher -->
+                    <div class="relative ml-2">
+                        <select id="langSwitcher"
+                            class="bg-navy-light text-white border border-gray-600 rounded-lg py-1.5 px-3 text-sm focus:outline-none focus:ring-2 focus:ring-odoo cursor-pointer appearance-none pr-7"
+                            style="background-image: url('data:image/svg+xml;utf8,<svg fill=\'white\' viewBox=\'0 0 20 20\' xmlns=\'http://www.w3.org/2000/svg\'><path d=\'M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z\'/></svg>'); background-repeat: no-repeat; background-position: right 0.5rem center; background-size: 1rem;">
+                            <option value="en" class="text-black">EN</option>
+                            <option value="az" class="text-black">AZ</option>
+                        </select>
+                    </div>
+
+                    <!-- CTA Button -->
+                    <a href="index.html#contact"
+                        class="ml-2 bg-odoo hover:bg-odoo-dark text-white px-5 py-2.5 rounded-lg font-semibold text-sm transition-all duration-300 shadow-lg shadow-odoo/20 hover:shadow-odoo/40 transform hover:-translate-y-0.5"
+                        data-i18n="nav_cta">Get Started</a>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobileMenuBtn" class="text-gray-300 hover:text-white focus:outline-none p-2">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-navy-light pb-4 px-4 border-t border-gray-800">
+            <a href="index.html" class="block py-3 text-gray-300 hover:text-white border-b border-gray-800"
+                data-i18n="nav_home">Home</a>
+            <a href="services.html" class="block py-3 text-gray-300 hover:text-white border-b border-gray-800"
+                data-i18n="nav_solutions">Solutions</a>
+            <a href="about.html" class="block py-3 text-gray-300 hover:text-white border-b border-gray-800"
+                data-i18n="nav_about">About Us</a>
+            <a href="index.html#contact" class="block py-3 text-gray-300 hover:text-white border-b border-gray-800"
+                data-i18n="nav_contact">Contact</a>
+            <div class="mt-4 flex items-center gap-3">
+                <select id="langSwitcherMobile"
+                    class="bg-gray-800 text-white border border-gray-600 rounded-lg py-2 px-3 flex-1">
+                    <option value="en">English</option>
+                    <option value="az">Azərbaycan</option>
+                </select>
+                <a href="index.html#contact"
+                    class="bg-odoo hover:bg-odoo-dark text-white px-5 py-2 rounded-lg font-semibold text-sm transition-all flex-1 text-center"
+                    data-i18n="nav_cta">Get Started</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="flex-grow">
+        
+<!-- ========== HERO SECTION ========== -->
+<section class="relative bg-navy text-white overflow-hidden py-28 sm:py-36 wave-divider">
+    <!-- Animated background -->
+    <div class="absolute inset-0 z-0">
+        <div class="absolute inset-0 bg-gradient-to-br from-navy via-navy to-odoo-dark opacity-80"></div>
+        <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjIiIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wMyIvPjwvc3ZnPg==')] opacity-40"></div>
+    </div>
+    <!-- Floating particles -->
+    <div class="hero-particles" id="heroParticles"></div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <!-- Badge -->
+        <div class="animate-fade-in-up inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-8">
+            <span class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
+            <span class="text-sm text-gray-300 font-medium" data-i18n="hero_badge">Certified Odoo Learning Partner</span>
+        </div>
+
+        <h1 class="text-4xl sm:text-5xl lg:text-7xl font-black tracking-tight mb-6 animate-fade-in-up animation-delay-100 leading-[1.1]">
+            <span data-i18n="hero_title_1">Business</span>
+            <span class="gradient-text" data-i18n="hero_title_2">Digitalization</span><br class="hidden sm:block">
+            <span data-i18n="hero_title_3">in Azerbaijan</span>
+        </h1>
+
+        <p class="mt-4 max-w-2xl mx-auto text-lg sm:text-xl text-gray-400 mb-4 animate-fade-in-up animation-delay-200">
+            <span data-i18n="hero_subtitle_prefix">Empowering enterprises with cutting-edge Odoo solutions for</span>
+        </p>
+        <!-- Typed text effect -->
+        <p class="text-xl sm:text-2xl font-semibold mb-10 animate-fade-in-up animation-delay-200" style="color: #FF6600">
+            <span id="typedText"></span><span class="typed-cursor"></span>
+        </p>
+
+        <div class="animate-fade-in-up animation-delay-300 flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="#contact"
+                class="cta-glow inline-flex items-center justify-center px-8 py-4 text-base font-bold text-white bg-odoo rounded-xl shadow-lg shadow-odoo/30 hover:shadow-xl hover:shadow-odoo/40 transition-all duration-300 transform hover:-translate-y-1"
+                data-i18n="hero_cta">
+                Get a Free Consultation
+            </a>
+            <a href="services.html"
+                class="inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-white border-2 border-white/20 hover:border-white/40 rounded-xl hover:bg-white/5 transition-all duration-300"
+                data-i18n="hero_cta_secondary">
+                Explore Solutions
+                <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+            </a>
+        </div>
+    </div>
+</section>
+
+
+
+
+<!-- ========== SOLUTIONS SECTION ========== -->
+<section id="solutions" class="py-24 bg-gray-50 wave-divider-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16 animate-on-scroll">
+            <p class="text-sm font-semibold text-odoo uppercase tracking-widest mb-3" data-i18n="solutions_label">What We Offer</p>
+            <h2 class="text-3xl sm:text-4xl font-bold text-navy mb-4" data-i18n="solutions_title">Our Odoo Solutions</h2>
+            <p class="text-gray-500 max-w-2xl mx-auto" data-i18n="solutions_subtitle">End-to-end enterprise solutions tailored for the Azerbaijani market</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 stagger-children">
+            <!-- Accounting -->
+            <div class="glass-card p-8 animate-on-scroll group">
+                <div class="icon-box w-14 h-14 bg-purple-100 text-odoo rounded-xl mb-6">
+                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 mb-3" data-i18n="sol_accounting_title">Accounting</h3>
+                <p class="text-gray-500 text-sm leading-relaxed" data-i18n="sol_accounting_desc">Local tax compliant financial management.</p>
+            </div>
+
+            <!-- Inventory -->
+            <div class="glass-card p-8 animate-on-scroll group">
+                <div class="icon-box w-14 h-14 bg-purple-100 text-odoo rounded-xl mb-6">
+                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path></svg>
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 mb-3" data-i18n="sol_inventory_title">Inventory</h3>
+                <p class="text-gray-500 text-sm leading-relaxed" data-i18n="sol_inventory_desc">Real-time warehouse and stock control.</p>
+            </div>
+
+            <!-- Sales -->
+            <div class="glass-card p-8 animate-on-scroll group">
+                <div class="icon-box w-14 h-14 bg-purple-100 text-odoo rounded-xl mb-6">
+                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 mb-3" data-i18n="sol_sales_title">Sales</h3>
+                <p class="text-gray-500 text-sm leading-relaxed" data-i18n="sol_sales_desc">Streamlined quotation to invoice workflow.</p>
+            </div>
+
+            <!-- HR -->
+            <div class="glass-card p-8 animate-on-scroll group">
+                <div class="icon-box w-14 h-14 bg-purple-100 text-odoo rounded-xl mb-6">
+                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 mb-3" data-i18n="sol_hr_title">HR &amp; Payroll</h3>
+                <p class="text-gray-500 text-sm leading-relaxed" data-i18n="sol_hr_desc">Comprehensive employee lifecycle management.</p>
+            </div>
+        </div>
+
+        <div class="text-center mt-12 animate-on-scroll">
+            <a href="services.html" class="inline-flex items-center text-odoo font-semibold hover:text-odoo-dark transition-colors group">
+                <span data-i18n="solutions_view_all">View all solutions</span>
+                <svg class="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- ========== STATS COUNTER ========== -->
+<section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-gradient-to-r from-navy via-navy to-odoo-dark rounded-2xl p-10 sm:p-14 shadow-2xl">
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center" id="statsSection">
+                <div class="stat-item animate-on-scroll">
+                    <p class="stat-number text-4xl sm:text-5xl font-black text-white" data-target="15" data-suffix="M+">0</p>
+                    <p class="text-sm text-gray-400 mt-2 font-medium" data-i18n="stat_users">Global Users</p>
+                </div>
+                <div class="stat-item animate-on-scroll">
+                    <p class="stat-number text-4xl sm:text-5xl font-black text-white" data-target="80" data-suffix="+">0</p>
+                    <p class="text-sm text-gray-400 mt-2 font-medium" data-i18n="stat_apps">Business Apps</p>
+                </div>
+                <div class="stat-item animate-on-scroll">
+                    <p class="stat-number text-4xl sm:text-5xl font-black text-white" data-target="180" data-suffix="+">0</p>
+                    <p class="text-sm text-gray-400 mt-2 font-medium" data-i18n="stat_countries">Countries</p>
+                </div>
+                <div class="stat-item animate-on-scroll">
+                    <p class="stat-number text-4xl sm:text-5xl font-black text-white" data-target="500" data-suffix="+">0</p>
+                    <p class="text-sm text-gray-400 mt-2 font-medium" data-i18n="stat_local_companies">Companies in Azerbaijan</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== WHY US SECTION ========== -->
+<section id="about" class="py-24 bg-white wave-divider">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col lg:flex-row items-center gap-16">
+            <div class="lg:w-1/2 animate-slide-left">
+                <div class="relative rounded-2xl overflow-hidden shadow-2xl">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Team meeting" class="w-full h-auto object-cover transform hover:scale-105 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-navy/40 to-transparent"></div>
+                </div>
+            </div>
+            <div class="lg:w-1/2 animate-slide-right">
+                <p class="text-sm font-semibold text-odoo uppercase tracking-widest mb-3" data-i18n="why_label">Why Choose Us</p>
+                <h2 class="text-3xl sm:text-4xl font-bold text-navy mb-6" data-i18n="why_title">Why CoreBase?</h2>
+                <p class="text-lg text-gray-500 leading-relaxed mb-8" data-i18n="why_desc">
+                    As a certified Odoo Learning Partner, we provide deep local expertise paired with world-class technology. We understand the Azerbaijani market and offer dedicated local support.
+                </p>
+                <div class="space-y-5">
+                    <div class="flex items-start gap-4 group">
+                        <div class="icon-box w-12 h-12 bg-purple-100 text-odoo rounded-xl flex-shrink-0">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-900" data-i18n="why_bullet_1">Certified Odoo Experts</h4>
+                            <p class="text-sm text-gray-500 mt-1" data-i18n="why_bullet_1_desc">Officially recognized by Odoo with deep platform expertise.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4 group">
+                        <div class="icon-box w-12 h-12 bg-purple-100 text-odoo rounded-xl flex-shrink-0">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-900" data-i18n="why_bullet_2">End-to-End Implementation</h4>
+                            <p class="text-sm text-gray-500 mt-1" data-i18n="why_bullet_2_desc">We handle everything from analysis to deployment so you can focus on your business.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4 group">
+                        <div class="icon-box w-12 h-12 bg-purple-100 text-odoo rounded-xl flex-shrink-0">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-900" data-i18n="why_bullet_3">Local On-site Support</h4>
+                            <p class="text-sm text-gray-500 mt-1" data-i18n="why_bullet_3_desc">Dedicated team based in Baku for hands-on implementation support.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ========== CONTACT FORM SECTION ========== -->
+<section id="contact" class="py-24 bg-gray-50">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-white rounded-2xl shadow-xl overflow-hidden animate-scale-in">
+            <div class="bg-gradient-to-r from-navy via-navy to-odoo-dark p-10 text-center relative overflow-hidden">
+                <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjIiIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wMyIvPjwvc3ZnPg==')] opacity-40"></div>
+                <div class="relative z-10">
+                    <h2 class="text-3xl sm:text-4xl font-bold text-white mb-3" data-i18n="contact_title">Transform Your Business Today</h2>
+                    <p class="text-gray-400" data-i18n="contact_subtitle">Leave your details and we will contact you shortly.</p>
+                </div>
+            </div>
+            <div class="p-8 sm:p-10">
+                <div id="formSuccess" class="hidden mb-6 p-4 bg-green-50 text-green-700 border border-green-200 rounded-xl flex items-center">
+                    <svg class="w-5 h-5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                    <span data-i18n="contact_success">Thank you! We will get back to you shortly.</span>
+                </div>
+                
+                <form id="contactForm" class="space-y-6">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" required placeholder=" " class="form-input">
+                        <label for="name" class="form-label" data-i18n="contact_name">Full Name</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="company" name="company" required placeholder=" " class="form-input">
+                        <label for="company" class="form-label" data-i18n="contact_company">Company Name</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" id="phone" name="phone" required placeholder=" " class="form-input">
+                        <label for="phone" class="form-label" data-i18n="contact_phone">Phone Number</label>
+                    </div>
+                    <button type="submit" class="cta-glow w-full bg-odoo text-white font-bold py-4 rounded-xl shadow-lg shadow-odoo/20 hover:bg-odoo-dark hover:shadow-xl transition-all duration-300 transform hover:-translate-y-0.5 flex justify-center items-center">
+                        <span data-i18n="contact_submit">Request Consultation</span>
+                        <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-navy text-gray-400 pt-16 pb-8 border-t border-gray-800 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+                <!-- Brand -->
+                <div class="lg:col-span-1">
+                    <div class="flex items-center gap-3 mb-5">
+                        <svg viewBox="0 0 200 200" width="36" height="36">
+                            <path d="M 100,34 L 157,67 L 100,100 L 43,67 Z" fill="#8F6483" stroke="#8F6483" stroke-width="1.5" stroke-linejoin="round" />
+                            <path d="M 43,67 L 100,100 L 100,166 L 43,133 Z" fill="#53374C" stroke="#53374C" stroke-width="1.5" stroke-linejoin="round" />
+                            <path d="M 100,100 L 157,67 L 157,133 L 100,166 Z" fill="#714B67" stroke="#714B67" stroke-width="1.5" stroke-linejoin="round" />
+                        </svg>
+                        <div class="flex flex-col justify-center">
+                            <span class="font-extrabold text-white text-xl leading-none">Core<span style="color: #8F6483">Base</span></span>
+                            <span class="text-[9px] font-bold tracking-[0.15em] uppercase" style="color: #FF6600">Odoo Partner</span>
+                        </div>
+                    </div>
+                    <p class="text-sm text-gray-500 leading-relaxed" data-i18n="footer_desc">Certified Odoo Learning Partner in Azerbaijan. Empowering businesses with modern ERP solutions.</p>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-white font-semibold mb-4 text-sm uppercase tracking-wider" data-i18n="footer_links">Quick Links</h3>
+                    <ul class="space-y-3">
+                        <li><a href="index.html" class="text-gray-500 hover:text-white transition-colors text-sm" data-i18n="nav_home">Home</a></li>
+                        <li><a href="services.html" class="text-gray-500 hover:text-white transition-colors text-sm" data-i18n="nav_solutions">Solutions</a></li>
+                        <li><a href="about.html" class="text-gray-500 hover:text-white transition-colors text-sm" data-i18n="nav_about">About Us</a></li>
+                        <li><a href="index.html#contact" class="text-gray-500 hover:text-white transition-colors text-sm" data-i18n="nav_contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h3 class="text-white font-semibold mb-4 text-sm uppercase tracking-wider" data-i18n="nav_contact">Contact</h3>
+                    <div class="space-y-3">
+                        <a href="mailto:m.saiq06@gmail.com" class="flex items-center text-gray-500 hover:text-white transition-colors text-sm">
+                            <svg class="w-4 h-4 mr-3 text-odoo-light flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+                                </path>
+                            </svg>
+                            m.saiq06@gmail.com
+                        </a>
+                        <a href="tel:+994706430304" class="flex items-center text-gray-500 hover:text-white transition-colors text-sm">
+                            <svg class="w-4 h-4 mr-3 text-odoo-light flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z">
+                                </path>
+                            </svg>
+                            +994 70 643 03 04
+                        </a>
+                        <div class="flex items-start text-gray-500 text-sm">
+                            <svg class="w-4 h-4 mr-3 text-odoo-light flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                            </svg>
+                            <span data-i18n="footer_address">Baku, Azerbaijan</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Social Links -->
+                <div>
+                    <h3 class="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Social Media</h3>
+                    <div class="flex space-x-3">
+                        <a href="https://www.instagram.com/"
+                            class="w-10 h-10 rounded-lg bg-navy-light flex items-center justify-center hover:bg-odoo hover:text-white transition-all duration-300 text-gray-500">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path fill-rule="evenodd"
+                                    d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                        </a>
+                        <a href="https://www.linkedin.com/"
+                            class="w-10 h-10 rounded-lg bg-navy-light flex items-center justify-center hover:bg-odoo hover:text-white transition-all duration-300 text-gray-500">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path fill-rule="evenodd"
+                                    d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                        </a>
+                        <a href="https://www.facebook.com/"
+                            class="w-10 h-10 rounded-lg bg-navy-light flex items-center justify-center hover:bg-odoo hover:text-white transition-all duration-300 text-gray-500">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path fill-rule="evenodd"
+                                    d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
+                <p class="text-sm text-gray-600" data-i18n="footer_text">© 2024 CoreBase. All rights reserved.</p>
+                <p class="text-sm text-gray-600">
+                    <span data-i18n="footer_made_with">Made with</span>
+                    <span class="text-red-500 mx-1">❤</span>
+                    <span data-i18n="footer_in_baku">in Baku, Azerbaijan</span>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom JS -->
+    <script src="static/js/main.js"></script>
+</body>
+
+</html>
