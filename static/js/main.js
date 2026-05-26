@@ -189,7 +189,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const langSwitcher = document.getElementById('langSwitcher');
     const langSwitcherMobile = document.getElementById('langSwitcherMobile');
     
-    let currentLang = localStorage.getItem('appLang') || 'az';
+    let currentLang = 'az';
     if (langSwitcher) langSwitcher.value = currentLang;
     if (langSwitcherMobile) langSwitcherMobile.value = currentLang;
 
@@ -215,7 +215,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
 
-            localStorage.setItem('appLang', lang);
+
             currentLang = lang;
             
             if (langSwitcher) langSwitcher.value = lang;
