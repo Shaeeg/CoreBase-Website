@@ -126,14 +126,14 @@
                 data-i18n="nav_about">About Us</a>
             <a href="index.html#contact" class="block py-3 text-gray-300 hover:text-white border-b border-gray-800"
                 data-i18n="nav_contact">Contact</a>
-            <div class="mt-4 flex items-center gap-3">
+            <div class="mt-4 flex flex-col gap-3">
                 <select id="langSwitcherMobile"
-                    class="bg-gray-800 text-white border border-gray-600 rounded-lg py-2 px-3 flex-1">
+                    class="bg-gray-800 text-white border border-gray-600 rounded-lg py-3 px-3 w-full outline-none focus:ring-2 focus:ring-odoo appearance-none">
                     <option value="en">English</option>
                     <option value="az">Azərbaycan</option>
                 </select>
                 <a href="index.html#contact"
-                    class="bg-odoo hover:bg-odoo-dark text-white px-5 py-2 rounded-lg font-semibold text-sm transition-all flex-1 text-center"
+                    class="bg-odoo hover:bg-odoo-dark text-white px-5 py-3 rounded-lg font-semibold text-sm transition-all w-full text-center shadow-md shadow-odoo/20"
                     data-i18n="nav_cta">Get Started</a>
             </div>
         </div>
@@ -143,7 +143,7 @@
     <main class="flex-grow">
         
 <!-- ========== HERO SECTION ========== -->
-<section class="relative bg-navy text-white overflow-hidden py-28 sm:py-36 wave-divider">
+<section class="relative bg-navy text-white overflow-hidden py-16 sm:py-28 lg:py-36 wave-divider">
     <!-- Animated background -->
     <div class="absolute inset-0 z-0">
         <div class="absolute inset-0 bg-gradient-to-br from-navy via-navy to-odoo-dark opacity-80"></div>
@@ -159,7 +159,7 @@
             <span class="text-sm text-gray-300 font-medium" data-i18n="hero_badge">Certified Odoo Learning Partner</span>
         </div>
 
-        <h1 class="text-4xl sm:text-5xl lg:text-7xl font-black tracking-tight mb-6 animate-fade-in-up animation-delay-100 leading-[1.1]">
+        <h1 class="text-3xl sm:text-5xl lg:text-7xl font-black tracking-tight mb-6 animate-fade-in-up animation-delay-100 leading-[1.1]">
             <span data-i18n="hero_title_1">Business</span>
             <span class="gradient-text" data-i18n="hero_title_2">Digitalization</span><br class="hidden sm:block">
             <span data-i18n="hero_title_3">in Azerbaijan</span>
@@ -193,7 +193,7 @@
 
 
 <!-- ========== SOLUTIONS SECTION ========== -->
-<section id="solutions" class="py-24 bg-gray-50 wave-divider-white">
+<section id="solutions" class="py-16 md:py-24 bg-gray-50 wave-divider-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16 animate-on-scroll">
             <p class="text-sm font-semibold text-odoo uppercase tracking-widest mb-3" data-i18n="solutions_label">What We Offer</p>
@@ -249,25 +249,25 @@
 </section>
 
 <!-- ========== STATS COUNTER ========== -->
-<section class="py-20 bg-white">
+<section class="py-16 md:py-20 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="bg-gradient-to-r from-navy via-navy to-odoo-dark rounded-2xl p-10 sm:p-14 shadow-2xl">
-            <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center" id="statsSection">
+        <div class="bg-gradient-to-r from-navy via-navy to-odoo-dark rounded-2xl p-6 sm:p-14 shadow-2xl">
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 text-center" id="statsSection">
                 <div class="stat-item animate-on-scroll">
-                    <p class="stat-number text-4xl sm:text-5xl font-black text-white" data-target="15" data-suffix="M+">0</p>
-                    <p class="text-sm text-gray-400 mt-2 font-medium" data-i18n="stat_users">Global Users</p>
+                    <p class="stat-number text-3xl sm:text-5xl font-black text-white" data-target="15" data-suffix="M+">0</p>
+                    <p class="text-xs sm:text-sm text-gray-400 mt-2 font-medium" data-i18n="stat_users">Global Users</p>
                 </div>
                 <div class="stat-item animate-on-scroll">
-                    <p class="stat-number text-4xl sm:text-5xl font-black text-white" data-target="80" data-suffix="+">0</p>
-                    <p class="text-sm text-gray-400 mt-2 font-medium" data-i18n="stat_apps">Business Apps</p>
+                    <p class="stat-number text-3xl sm:text-5xl font-black text-white" data-target="80" data-suffix="+">0</p>
+                    <p class="text-xs sm:text-sm text-gray-400 mt-2 font-medium" data-i18n="stat_apps">Business Apps</p>
                 </div>
                 <div class="stat-item animate-on-scroll">
-                    <p class="stat-number text-4xl sm:text-5xl font-black text-white" data-target="180" data-suffix="+">0</p>
-                    <p class="text-sm text-gray-400 mt-2 font-medium" data-i18n="stat_countries">Countries</p>
+                    <p class="stat-number text-3xl sm:text-5xl font-black text-white" data-target="180" data-suffix="+">0</p>
+                    <p class="text-xs sm:text-sm text-gray-400 mt-2 font-medium" data-i18n="stat_countries">Countries</p>
                 </div>
                 <div class="stat-item animate-on-scroll">
-                    <p class="stat-number text-4xl sm:text-5xl font-black text-white" data-target="500" data-suffix="+">0</p>
-                    <p class="text-sm text-gray-400 mt-2 font-medium" data-i18n="stat_local_companies">Companies in Azerbaijan</p>
+                    <p class="stat-number text-3xl sm:text-5xl font-black text-white" data-target="500" data-suffix="+">0</p>
+                    <p class="text-xs sm:text-sm text-gray-400 mt-2 font-medium" data-i18n="stat_local_companies">Companies in Azerbaijan</p>
                 </div>
             </div>
         </div>
@@ -275,10 +275,10 @@
 </section>
 
 <!-- ========== WHY US SECTION ========== -->
-<section id="about" class="py-24 bg-white wave-divider">
+<section id="about" class="py-16 md:py-24 bg-white wave-divider">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex flex-col lg:flex-row items-center gap-16">
-            <div class="lg:w-1/2 animate-slide-left">
+        <div class="flex flex-col lg:flex-row items-center gap-8 lg:gap-16">
+            <div class="lg:w-1/2 animate-slide-left w-full">
                 <div class="relative rounded-2xl overflow-hidden shadow-2xl">
                     <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Team meeting" class="w-full h-auto object-cover transform hover:scale-105 transition-transform duration-700">
                     <div class="absolute inset-0 bg-gradient-to-t from-navy/40 to-transparent"></div>
@@ -326,17 +326,17 @@
 
 
 <!-- ========== CONTACT FORM SECTION ========== -->
-<section id="contact" class="py-24 bg-gray-50">
+<section id="contact" class="py-16 md:py-24 bg-gray-50">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="bg-white rounded-2xl shadow-xl overflow-hidden animate-scale-in">
-            <div class="bg-gradient-to-r from-navy via-navy to-odoo-dark p-10 text-center relative overflow-hidden">
+            <div class="bg-gradient-to-r from-navy via-navy to-odoo-dark p-6 sm:p-10 text-center relative overflow-hidden">
                 <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjIiIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wMyIvPjwvc3ZnPg==')] opacity-40"></div>
                 <div class="relative z-10">
-                    <h2 class="text-3xl sm:text-4xl font-bold text-white mb-3" data-i18n="contact_title">Transform Your Business Today</h2>
-                    <p class="text-gray-400" data-i18n="contact_subtitle">Leave your details and we will contact you shortly.</p>
+                    <h2 class="text-2xl sm:text-4xl font-bold text-white mb-2 sm:mb-3" data-i18n="contact_title">Transform Your Business Today</h2>
+                    <p class="text-sm sm:text-base text-gray-400" data-i18n="contact_subtitle">Leave your details and we will contact you shortly.</p>
                 </div>
             </div>
-            <div class="p-8 sm:p-10">
+            <div class="p-5 sm:p-10">
                 <div id="formSuccess" class="hidden mb-6 p-4 bg-green-50 text-green-700 border border-green-200 rounded-xl flex items-center">
                     <svg class="w-5 h-5 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
                     <span data-i18n="contact_success">Thank you! We will get back to you shortly.</span>

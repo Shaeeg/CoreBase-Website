@@ -126,14 +126,14 @@
                 data-i18n="nav_about">About Us</a>
             <a href="index.html#contact" class="block py-3 text-gray-300 hover:text-white border-b border-gray-800"
                 data-i18n="nav_contact">Contact</a>
-            <div class="mt-4 flex items-center gap-3">
+            <div class="mt-4 flex flex-col gap-3">
                 <select id="langSwitcherMobile"
-                    class="bg-gray-800 text-white border border-gray-600 rounded-lg py-2 px-3 flex-1">
+                    class="bg-gray-800 text-white border border-gray-600 rounded-lg py-3 px-3 w-full outline-none focus:ring-2 focus:ring-odoo appearance-none">
                     <option value="en">English</option>
                     <option value="az">Azərbaycan</option>
                 </select>
                 <a href="index.html#contact"
-                    class="bg-odoo hover:bg-odoo-dark text-white px-5 py-2 rounded-lg font-semibold text-sm transition-all flex-1 text-center"
+                    class="bg-odoo hover:bg-odoo-dark text-white px-5 py-3 rounded-lg font-semibold text-sm transition-all w-full text-center shadow-md shadow-odoo/20"
                     data-i18n="nav_cta">Get Started</a>
             </div>
         </div>
@@ -143,23 +143,23 @@
     <main class="flex-grow">
         
 <!-- ========== PAGE HERO ========== -->
-<section class="page-hero bg-navy text-white py-24 sm:py-28 wave-divider">
+<section class="page-hero bg-navy text-white py-16 sm:py-28 wave-divider">
     <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div class="animate-fade-in-up inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-6">
             <span class="text-sm text-gray-300 font-medium" data-i18n="about_badge">Our Story</span>
         </div>
-        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight mb-6 animate-fade-in-up animation-delay-100" data-i18n="about_hero_title">About CoreBase</h1>
-        <p class="max-w-2xl mx-auto text-lg text-gray-400 animate-fade-in-up animation-delay-200" data-i18n="about_hero_subtitle">
+        <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight mb-4 sm:mb-6 animate-fade-in-up animation-delay-100" data-i18n="about_hero_title">About CoreBase</h1>
+        <p class="max-w-2xl mx-auto text-base sm:text-lg text-gray-400 animate-fade-in-up animation-delay-200" data-i18n="about_hero_subtitle">
             Empowering Azerbaijani businesses with world-class Odoo ERP solutions since 2019.
         </p>
     </div>
 </section>
 
 <!-- ========== MISSION SECTION ========== -->
-<section class="py-24 bg-gray-50">
+<section class="py-16 md:py-24 bg-gray-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex flex-col lg:flex-row items-center gap-16">
-            <div class="lg:w-1/2 animate-slide-left">
+        <div class="flex flex-col lg:flex-row items-center gap-8 lg:gap-16">
+            <div class="lg:w-1/2 animate-slide-left w-full">
                 <div class="relative rounded-2xl overflow-hidden shadow-2xl">
                     <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Team collaboration" class="w-full h-auto object-cover transform hover:scale-105 transition-transform duration-700">
                     <div class="absolute inset-0 bg-gradient-to-t from-navy/30 to-transparent"></div>
@@ -180,15 +180,15 @@
 </section>
 
 <!-- ========== VALUES GRID ========== -->
-<section class="py-24 bg-white">
+<section class="py-16 md:py-24 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16 animate-on-scroll">
-            <p class="text-sm font-semibold text-odoo uppercase tracking-widest mb-3" data-i18n="values_label">What Drives Us</p>
-            <h2 class="text-3xl sm:text-4xl font-bold text-navy mb-4" data-i18n="values_title">Our Core Values</h2>
+        <div class="text-center mb-10 md:mb-16 animate-on-scroll">
+            <p class="text-sm font-semibold text-odoo uppercase tracking-widest mb-2 md:mb-3" data-i18n="values_label">What Drives Us</p>
+            <h2 class="text-2xl sm:text-4xl font-bold text-navy mb-4" data-i18n="values_title">Our Core Values</h2>
             <p class="text-gray-500 max-w-2xl mx-auto" data-i18n="values_subtitle">The principles that guide everything we do</p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 stagger-children">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 stagger-children">
             <!-- Innovation -->
             <div class="value-card animate-on-scroll text-center">
                 <div class="icon-box w-16 h-16 bg-purple-50 text-odoo rounded-xl mx-auto mb-5">
@@ -230,10 +230,10 @@
 
 
 <!-- ========== CTA BANNER ========== -->
-<section class="py-20 bg-gradient-to-r from-navy via-navy to-odoo-dark">
+<section class="py-16 md:py-20 bg-gradient-to-r from-navy via-navy to-odoo-dark">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center animate-on-scroll">
-        <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4" data-i18n="about_cta_title">Let's Build Something Great Together</h2>
-        <p class="text-gray-400 mb-8 text-lg" data-i18n="about_cta_subtitle">Partner with CoreBase and experience the difference a certified Odoo partner makes.</p>
+        <h2 class="text-2xl sm:text-4xl font-bold text-white mb-4" data-i18n="about_cta_title">Let's Build Something Great Together</h2>
+        <p class="text-gray-400 mb-8 text-base sm:text-lg" data-i18n="about_cta_subtitle">Partner with CoreBase and experience the difference a certified Odoo partner makes.</p>
         <a href="index.html#contact"
             class="cta-glow inline-flex items-center justify-center px-8 py-4 text-base font-bold text-white bg-odoo rounded-xl shadow-lg shadow-odoo/30 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
             data-i18n="hero_cta">
