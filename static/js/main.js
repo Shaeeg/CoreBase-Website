@@ -195,7 +195,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     async function loadTranslations(lang) {
         try {
-            const response = await fetch(`/static/translations/${lang}.json`);
+            // Use relative path for GitHub Pages compatibility
+            const basePath = window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/') + 1);
+            const response = await fetch(`${basePath}static/translations/${lang}.json`);
             if (!response.ok) throw new Error('Network response was not ok');
             const translations = await response.json();
             
