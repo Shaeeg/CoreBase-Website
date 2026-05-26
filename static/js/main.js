@@ -126,7 +126,7 @@ document.addEventListener('DOMContentLoaded', () => {
         let wordIndex = 0;
         let charIndex = 0;
         let isDeleting = false;
-        let currentWords = words;
+        let currentWords = wordsAz;
         
         const type = () => {
             const currentWord = currentWords[wordIndex];
@@ -189,7 +189,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const langSwitcher = document.getElementById('langSwitcher');
     const langSwitcherMobile = document.getElementById('langSwitcherMobile');
     
-    let currentLang = localStorage.getItem('appLang') || 'en';
+    let currentLang = localStorage.getItem('appLang') || 'az';
     if (langSwitcher) langSwitcher.value = currentLang;
     if (langSwitcherMobile) langSwitcherMobile.value = currentLang;
 
