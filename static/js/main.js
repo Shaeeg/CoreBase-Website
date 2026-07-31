@@ -1,6 +1,62 @@
 const CONTACT_API_URL = 'https://corebase-backend-3wgk.onrender.com/api/contact';
+const TRACK_API_BASE = 'https://corebase-backend-3wgk.onrender.com';
 
 document.addEventListener('DOMContentLoaded', () => {
+
+    // --- Analytics (anonymous — no PII, just a random id in localStorage) ---
+    function getVisitorId() {
+        try {
+            let id = localStorage.getItem('corebase_vid');
+            if (!id) {
+                id = crypto.randomUUID();
+                localStorage.setItem('corebase_vid', id);
+            }
+            return id;
+        } catch (error) {
+            return 'anon';
+        }
+    }
+
+    function sendBeacon(path, payload) {
+        const url = `${TRACK_API_BASE}${path}`;
+        const body = JSON.stringify(payload);
+        if (navigator.sendBeacon) {
+            navigator.sendBeacon(url, new Blob([body], { type: 'application/json' }));
+        } else {
+            fetch(url, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body, keepalive: true }).catch(() => {});
+        }
+    }
+
+    function trackClick(name) {
+        sendBeacon('/api/track/click', {
+            name,
+            path: window.location.pathname,
+            visitor_id: getVisitorId()
+        });
+    }
+
+    let storedLang = 'az';
+    try {
+        storedLang = localStorage.getItem('corebase_lang') || 'az';
+    } catch (error) {
+        // localStorage unavailable — default is fine
+    }
+
+    sendBeacon('/api/track/pageview', {
+        path: window.location.pathname,
+        referrer: document.referrer,
+        visitor_id: getVisitorId(),
+        lang: storedLang
+    });
+
+    document.addEventListener('click', (e) => {
+        const target = e.target.closest('a[href^="tel:"], a[href^="mailto:"], [data-track]');
+        if (!target) return;
+        const trackName = target.dataset.track
+            || `${(target.getAttribute('href') || '').split(':')[0]}_click`;
+        trackClick(trackName);
+    });
+
 
     // --- Mobile Menu Toggle ---
     const mobileMenuBtn = document.getElementById('mobileMenuBtn');
@@ -286,6 +342,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (response.ok && result.success) {
                     formSuccess.classList.remove('hidden');
                     contactForm.reset();
+                    trackClick('contact_form_submit_success');
 
                     setTimeout(() => {
                         formSuccess.classList.add('hidden');
@@ -296,6 +353,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             } catch (error) {
                 console.error('Error submitting form:', error);
+                trackClick('contact_form_submit_error');
                 alert('There was an error submitting the form. Please try again.');
             } finally {
                 submitBtn.innerHTML = originalContent;

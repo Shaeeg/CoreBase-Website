@@ -1,12 +1,21 @@
 # CoreBase Contact Form Backend
 
-A small Flask API with one job: take contact-form submissions from
-corebase.az and create a `crm.lead` in Odoo via XML-RPC.
+A small Flask API with two jobs: take contact-form submissions from
+corebase.az and create a `crm.lead` in Odoo via XML-RPC, and record
+anonymous page-view/click analytics viewable from a password-protected
+`/admin` dashboard.
 
 ## Endpoints
 
 - `POST /api/contact` — body: `{ "name": "...", "company": "...", "phone": "..." }`.
   Returns `{ "success": true, "lead_id": 123 }` or `{ "success": false, "error": "..." }`.
+- `POST /api/track/pageview` — body: `{ "path", "referrer", "visitor_id", "lang" }`. Called
+  automatically by `static/js/main.js` on every page load.
+- `POST /api/track/click` — body: `{ "name", "path", "visitor_id" }`. Called on phone/email
+  link clicks, contact form submissions, and any element with a `data-track="..."` attribute.
+- `GET /admin` — login form for the analytics dashboard.
+- `GET /admin/dashboard` — page views, unique visitors, top pages/clicks, 14-day trend.
+  Requires signing in at `/admin` first.
 - `GET /healthz` — plain health check for uptime monitors / host health checks.
 
 ## Required environment variables
@@ -22,6 +31,13 @@ password.
 | `ODOO_USERNAME` | Login of the Odoo user the API key belongs to |
 | `ODOO_API_KEY` | API key for that user |
 | `ALLOWED_ORIGINS` | Comma-separated origins allowed to call the API (your live site + localhost for testing) |
+| `DATABASE_URL` | Postgres connection string for analytics (free tier from [Neon](https://neon.tech) or [Supabase](https://supabase.com) works fine). Tables are created automatically on first use. |
+| `ADMIN_PASSWORD` | Password for the `/admin` dashboard. |
+| `SECRET_KEY` | Random string used to sign the admin session cookie — generate with `python -c "import secrets; print(secrets.token_hex(32))"`. Without it, admin sessions get invalidated every time the server restarts. |
+
+If `DATABASE_URL` isn't set, `/api/track/*` calls silently no-op (the
+site keeps working) and `/admin/dashboard` shows an "analytics
+unavailable" message instead of crashing.
 
 ## Running locally
 

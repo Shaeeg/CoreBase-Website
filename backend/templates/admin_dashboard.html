@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>CoreBase Admin — Dashboard</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<style>
+  :root { color-scheme: dark; }
+  * { box-sizing: border-box; }
+  body {
+    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+    background: #0f0f14; color: #e8e6f0; margin: 0; padding: 2rem;
+  }
+  header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; flex-wrap: wrap; gap: 1rem; }
+  h1 { font-size: 1.5rem; margin: 0; }
+  a.logout { color: #b0aebd; text-decoration: none; font-size: .875rem; }
+  a.logout:hover { color: #fff; }
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; margin-bottom: 2rem; }
+  .card { background: #1a1a22; border-radius: 12px; padding: 1.25rem; }
+  .card .label { font-size: .8rem; color: #b0aebd; margin-bottom: .4rem; }
+  .card .value { font-size: 1.75rem; font-weight: 700; }
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+  @media (max-width: 800px) { .grid2 { grid-template-columns: 1fr; } }
+  section { background: #1a1a22; border-radius: 12px; padding: 1.25rem; margin-bottom: 1.5rem; }
+  section h2 { font-size: 1rem; margin: 0 0 1rem; }
+  table { width: 100%; border-collapse: collapse; font-size: .875rem; }
+  th, td { text-align: left; padding: .5rem .25rem; border-bottom: 1px solid #2a2a34; }
+  th { color: #b0aebd; font-weight: 500; }
+  .chart { display: flex; align-items: flex-end; gap: 6px; height: 120px; }
+  .bar-wrap { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; height: 100%; }
+  .bar { width: 100%; background: #7a4a6b; border-radius: 4px 4px 0 0; min-height: 2px; }
+  .bar-label { font-size: .65rem; color: #b0aebd; margin-top: .4rem; white-space: nowrap; }
+  .empty { color: #b0aebd; font-size: .875rem; }
+  .error-banner { background: #3a2020; color: #ff8f8f; padding: 1rem; border-radius: 8px; margin-bottom: 1.5rem; }
+</style>
+</head>
+<body>
+<header>
+  <h1>CoreBase Admin</h1>
+  <a class="logout" href="{{ url_for('admin_logout') }}">Sign out</a>
+</header>
+
+{% if error %}
+  <div class="error-banner">Analytics unavailable: {{ error }}</div>
+{% elif stats %}
+  <div class="cards">
+    <div class="card"><div class="label">Total views</div><div class="value">{{ stats.total_views }}</div></div>
+    <div class="card"><div class="label">Total visitors</div><div class="value">{{ stats.total_visitors }}</div></div>
+    <div class="card"><div class="label">Views (7d)</div><div class="value">{{ stats.views_7d }}</div></div>
+    <div class="card"><div class="label">Visitors (7d)</div><div class="value">{{ stats.visitors_7d }}</div></div>
+    <div class="card"><div class="label">Views (30d)</div><div class="value">{{ stats.views_30d }}</div></div>
+    <div class="card"><div class="label">Visitors (30d)</div><div class="value">{{ stats.visitors_30d }}</div></div>
+  </div>
+
+  <section>
+    <h2>Views — last 14 days</h2>
+    {% if stats.daily %}
+    {% set max_views = (stats.daily | map(attribute='views') | max) %}
+    <div class="chart">
+      {% for d in stats.daily %}
+      <div class="bar-wrap">
+        <div class="bar" style="height: {{ (d.views / max_views * 100) if max_views else 0 }}%" title="{{ d.date }}: {{ d.views }} views, {{ d.visitors }} visitors"></div>
+        <div class="bar-label">{{ d.date[5:] }}</div>
+      </div>
+      {% endfor %}
+    </div>
+    {% else %}
+    <div class="empty">No data yet.</div>
+    {% endif %}
+  </section>
+
+  <div class="grid2">
+    <section>
+      <h2>Top pages</h2>
+      {% if stats.top_pages %}
+      <table>
+        <tr><th>Path</th><th>Views</th><th>Visitors</th></tr>
+        {% for p in stats.top_pages %}
+        <tr><td>{{ p.path }}</td><td>{{ p.views }}</td><td>{{ p.visitors }}</td></tr>
+        {% endfor %}
+      </table>
+      {% else %}
+      <div class="empty">No data yet.</div>
+      {% endif %}
+    </section>
+
+    <section>
+      <h2>Top clicks</h2>
+      {% if stats.top_clicks %}
+      <table>
+        <tr><th>Event</th><th>Clicks</th></tr>
+        {% for c in stats.top_clicks %}
+        <tr><td>{{ c.name }}</td><td>{{ c.clicks }}</td></tr>
+        {% endfor %}
+      </table>
+      {% else %}
+      <div class="empty">No data yet.</div>
+      {% endif %}
+    </section>
+  </div>
+
+  <section>
+    <h2>Recent visits</h2>
+    {% if stats.recent_views %}
+    <table>
+      <tr><th>Time (UTC)</th><th>Path</th><th>Referrer</th><th>Visitor</th></tr>
+      {% for v in stats.recent_views %}
+      <tr>
+        <td>{{ v.created_at[:19].replace('T', ' ') }}</td>
+        <td>{{ v.path }}</td>
+        <td>{{ v.referrer or 'direct' }}</td>
+        <td>{{ v.visitor_id }}</td>
+      </tr>
+      {% endfor %}
+    </table>
+    {% else %}
+    <div class="empty">No data yet.</div>
+    {% endif %}
+  </section>
+{% else %}
+  <div class="empty">No data yet.</div>
+{% endif %}
+</body>
+</html>
