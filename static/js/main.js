@@ -1,5 +1,8 @@
+// TODO: replace with your deployed backend URL, e.g. https://corebase-backend.onrender.com/api/contact
+const CONTACT_API_URL = 'https://YOUR-BACKEND-HOST.onrender.com/api/contact';
+
 document.addEventListener('DOMContentLoaded', () => {
-    
+
     // --- Mobile Menu Toggle ---
     const mobileMenuBtn = document.getElementById('mobileMenuBtn');
     const mobileMenu = document.getElementById('mobileMenu');
@@ -266,12 +269,12 @@ document.addEventListener('DOMContentLoaded', () => {
             const formData = {
                 name: document.getElementById('name').value,
                 company: document.getElementById('company').value,
-                phone: document.getElementById('phone').value
+                phone: document.getElementById('phone').value,
+                website: document.getElementById('website').value // honeypot, left empty by real users
             };
 
             try {
-                // IMPORTANT: Replace 'YOUR_FORM_ID' with your actual Formspree form ID
-                const response = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
+                const response = await fetch(CONTACT_API_URL, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
@@ -279,15 +282,17 @@ document.addEventListener('DOMContentLoaded', () => {
                     body: JSON.stringify(formData)
                 });
 
-                if (response.ok) {
+                const result = await response.json().catch(() => ({}));
+
+                if (response.ok && result.success) {
                     formSuccess.classList.remove('hidden');
                     contactForm.reset();
-                    
+
                     setTimeout(() => {
                         formSuccess.classList.add('hidden');
                     }, 5000);
                 } else {
-                    throw new Error('Form submission failed');
+                    throw new Error(result.error || 'Form submission failed');
                 }
 
             } catch (error) {
