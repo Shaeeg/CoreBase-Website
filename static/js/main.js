@@ -1,5 +1,4 @@
-// TODO: replace with your deployed backend URL, e.g. https://corebase-backend.onrender.com/api/contact
-const CONTACT_API_URL = 'https://YOUR-BACKEND-HOST.onrender.com/api/contact';
+const CONTACT_API_URL = 'https://corebase-backend-3wgk.onrender.com/api/contact';
 
 document.addEventListener('DOMContentLoaded', () => {
 
