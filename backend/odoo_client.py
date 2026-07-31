@@ -8,10 +8,15 @@ class OdooConnectionError(Exception):
 
 class OdooClient:
     def __init__(self, url=None, db=None, username=None, api_key=None):
-        self.url = (url or os.environ["ODOO_URL"]).rstrip("/")
-        self.db = db or os.environ["ODOO_DB"]
-        self.username = username or os.environ["ODOO_USERNAME"]
-        self.api_key = api_key or os.environ["ODOO_API_KEY"]
+        try:
+            self.url = (url or os.environ["ODOO_URL"]).rstrip("/")
+            self.db = db or os.environ["ODOO_DB"]
+            self.username = username or os.environ["ODOO_USERNAME"]
+            self.api_key = api_key or os.environ["ODOO_API_KEY"]
+        except KeyError as exc:
+            raise OdooConnectionError(
+                f"Missing required environment variable: {exc.args[0]}"
+            ) from exc
         self._uid = None
 
     def _get_uid(self):
