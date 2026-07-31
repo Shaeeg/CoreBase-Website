@@ -187,6 +187,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const langSwitcherMobile = document.getElementById('langSwitcherMobile');
     
     let currentLang = 'az';
+    try {
+        currentLang = localStorage.getItem('corebase_lang') || 'az';
+    } catch (error) {
+        // localStorage unavailable (e.g. private browsing) — fall back to default
+    }
     if (langSwitcher) langSwitcher.value = currentLang;
     if (langSwitcherMobile) langSwitcherMobile.value = currentLang;
 
@@ -214,7 +219,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
             currentLang = lang;
-            
+            try {
+                localStorage.setItem('corebase_lang', lang);
+            } catch (error) {
+                // localStorage unavailable (e.g. private browsing) — language just won't persist
+            }
+
             if (langSwitcher) langSwitcher.value = lang;
             if (langSwitcherMobile) langSwitcherMobile.value = lang;
             
