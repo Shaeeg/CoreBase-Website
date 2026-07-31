@@ -42,6 +42,13 @@ def get_odoo_client():
 
 
 @app.get("/")
+def root():
+    # admin.corebase.az points at this same service — send it straight to login.
+    if request.host.split(":")[0] == "admin.corebase.az":
+        return redirect(url_for("admin_login"))
+    return jsonify(status="ok")
+
+
 @app.get("/healthz")
 def health():
     return jsonify(status="ok")
