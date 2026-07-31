@@ -33,14 +33,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Active Nav Link Highlighting ---
     const navLinks = document.querySelectorAll('.nav-link');
-    const currentPath = window.location.pathname;
+    const currentFile = window.location.pathname.split('/').pop() || 'index.html';
     navLinks.forEach(link => {
-        const href = link.getAttribute('href');
-        if (href === currentPath || (currentPath === '/' && href === '/')) {
-            // Only mark exact matches or hash links on homepage
-            if (href === currentPath) {
-                link.classList.add('active');
-            }
+        const linkFile = link.getAttribute('href').split('#')[0] || 'index.html';
+        if (linkFile === currentFile) {
+            link.classList.add('active');
         }
     });
 

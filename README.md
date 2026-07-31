@@ -1,69 +1,60 @@
 # CoreBase Website
 
-A professional, multi-language B2B website built for **CoreBase**, a certified Odoo Learning Partner in Azerbaijan. This project uses a Flask backend and a clean HTML/Tailwind CSS frontend with a dynamic client-side translation system.
+A professional, multi-language B2B website built for **CoreBase**, a team of dedicated Odoo specialists in Azerbaijan. This is a static HTML/Tailwind CSS site with a dynamic client-side translation system — no backend or build step required.
 
 ## 🚀 Features
 
 - **Dynamic Localization**: Instantly switch between English (EN) and Azerbaijani (AZ) without page reloads using Vanilla JavaScript and JSON dictionaries.
 - **Modern UI**: Styled with Tailwind CSS, featuring an enterprise-tech aesthetic with custom "Odoo Purple" and "Deep Navy" branding.
 - **Fully Responsive**: Optimized for desktop, tablet, and mobile viewing.
-- **Lead Generation Form**: A functional AJAX-powered contact form with immediate user feedback.
+- **Lead Generation Form**: An AJAX-powered contact form (backend submission handler in progress).
 
 ## 🛠️ Technology Stack
 
-- **Backend**: Python (Flask)
 - **Frontend**: HTML5, Vanilla JavaScript, CSS3
 - **Styling**: Tailwind CSS (via CDN)
-- **Translations**: JSON Dictionaries (`en.json`, `az.json`)
+- **Translations**: JSON Dictionaries (`static/translations/en.json`, `az.json`)
+- **Hosting**: Static hosting (GitHub Pages, via `CNAME` → corebase.az)
 
 ## 💻 Getting Started
 
 ### Prerequisites
-Make sure you have Python 3 installed on your machine.
+Any local static file server works. No Python or Node dependencies are required to view the site.
 
-### Installation & Setup
+### Running locally
 
-1. **Clone the repository** (if you haven't already):
+1. **Clone the repository**:
    ```bash
    git clone https://github.com/Shaeeg/CoreBase-Website.git
    cd CoreBase-Website
    ```
 
-2. **Create and activate a virtual environment** (Recommended):
+2. **Serve the files** with any static server, for example:
    ```bash
-   python3 -m venv venv
-   source venv/bin/activate
+   python3 -m http.server 8000
    ```
 
-3. **Install the dependencies**:
-   ```bash
-   pip install -r requirements.txt
-   ```
+3. **View the website**:
+   Open your browser and navigate to `http://127.0.0.1:8000`
 
-4. **Run the Flask application**:
-   ```bash
-   python3 app.py
-   ```
-
-5. **View the website**:
-   Open your browser and navigate to `http://127.0.0.1:5000`
-   
 ## 📁 Project Structure
 
 ```text
 CoreBase-Website/
-├── app.py                  # Main Flask application and API routes
-├── requirements.txt        # Python dependencies
-├── .gitignore              # Ignored files for git
-├── translations/           # Localization dictionaries
-│   ├── az.json             # Azerbaijani translations
-│   └── en.json             # English translations
-├── templates/              # HTML templates
-│   ├── base.html           # Master layout containing Navbar and Footer
-│   └── index.html          # Homepage content
-└── static/                 # Static assets
+├── index.html              # Homepage
+├── about.html              # About Us page
+├── services.html           # Services / Solutions page
+├── CNAME                   # Custom domain for GitHub Pages (corebase.az)
+├── robots.txt              # Search engine crawl rules
+├── sitemap.xml             # Sitemap for search engines
+└── static/
     ├── css/
     │   └── style.css       # Custom animations and styles
-    └── js/
-        └── main.js         # Logic for translation switcher and form submission
+    ├── js/
+    │   └── main.js         # Translation switcher, scroll animations, form handling
+    ├── images/
+    │   └── favicon.svg
+    └── translations/
+        ├── en.json         # English translations
+        └── az.json         # Azerbaijani translations
 ```
